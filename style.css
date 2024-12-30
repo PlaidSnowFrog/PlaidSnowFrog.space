@@ -1,0 +1,49 @@
+body {
+    background-image: url(/Images/Background/index.png);
+    background-size: cover;
+}
+
+/* fonts */
+@font-face {
+    font-family: 0xProto;
+    src: url(/Fonts/0xproto/fonts/0xProto-Regular.otf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 0xProto;
+    src: url(/Fonts/0xproto/fonts/0xProto-Bold.otf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 0xProto;
+    src: url(/Fonts/0xproto/fonts/0xProto-Italic.otf);
+    font-weight: lighter;
+}
+
+/* Ui Helpers */
+.Background {
+    background-color: bisque;
+    opacity: 0.7;
+    display: inline-block;
+    border-radius: 15%;
+}
+
+/* Text Classes */
+.TitleText {
+    text-align: center;
+    color: crimson;
+    text-shadow: 3px 3px coral;
+    font-family: 0xProto;
+    font-weight: bold;
+    font-size: 325%;
+}
+
+.Text {
+    text-align: center;
+    color: black;
+    font-family: 0xProto;
+    font-weight: normal;
+    font-size: 150%;
+}
