@@ -9,6 +9,6 @@ for (let i = 0; i < 2; i++) {
     dealerCards[i] = Math.floor((Math.random() * 10) + 1);
 }
 
-function hit(cards) { // This should use a pointer but idk how to do that in js
+function hit(cards) {
     cards.push(Math.floor((Math.random() * 10) + 1));
 }
