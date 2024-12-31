@@ -50,6 +50,14 @@ body {
     font-size: 325%;
 }
 
+.HeadingText {
+    text-align: center;
+    color: crimson;
+    text-shadow: 3px 3px coral;
+    font-family: 0xProto;
+    font-weight: bold;
+}
+
 .Text {
     text-align: center;
     color: black;
