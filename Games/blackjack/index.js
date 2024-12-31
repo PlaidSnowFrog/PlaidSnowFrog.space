@@ -13,6 +13,40 @@ function displayCards(cards) {
     return displayString;
 }
 
+function calculateCards(cards) {
+    let totalCards = 0;
+
+    for (let i = 0; i < cards.length; i++) {
+        totalCards += cards[i];
+    }
+
+    if (totalCards > 21) {
+        totalCards -= 21;
+    }
+
+    return totalCards;
+}
+
+function decideMove(cards) { // False = Stand;  True = hit
+    const totalCards = calculateCards(cards);
+
+    if (totalCards >= 19) {
+        return false;
+    }
+
+    if (totalCards <= 9) {
+        return true;
+    }
+}
+
+function calculateWinner(cards, enemyCards) { // False = Player lost;  True = Player won
+    if (totalCards(cards) > totalCards(enemyCards)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 // Logic
 
 // Generate cards
