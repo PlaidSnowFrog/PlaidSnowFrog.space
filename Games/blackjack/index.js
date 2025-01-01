@@ -1,6 +1,24 @@
 // Functions
-function hit(cards) {
-    cards.push(Math.floor((Math.random() * 10) + 1));
+function hit(cards, enemyCards) {
+    cards.push(Math.floor((Math.random() * 10) + 1)); // Add card
+
+    decideMove(enemyCards);
+
+    if (calculateWinner(cards, enemyCards)) {
+        alert("You won");
+    } else {
+        alert("You lost");
+    }
+}
+
+function stand(cards, enemyCards) {
+    decideMove(enemyCards);
+
+    if (calculateWinner(cards,enemyCards)) {
+        alert("You won");
+    } else {
+        alert("You lost");
+    }
 }
 
 function displayCards(cards) {
@@ -27,15 +45,15 @@ function calculateCards(cards) {
     return totalCards;
 }
 
-function decideMove(cards) { // False = Stand;  True = hit
+function decideMove(cards) {
     const totalCards = calculateCards(cards);
 
-    if (totalCards >= 19) {
-        return false;
+    if (totalCards >= 19) { // Stand
+        return;
     }
 
-    if (totalCards <= 9) {
-        return true;
+    if (totalCards <= 9) { // Hit
+        cards.push(Math.floor((Math.random() * 10) + 1));
     }
 }
 
@@ -61,12 +79,5 @@ for (let i = 0; i < 2; i++) {
     dealerCards[i] = Math.floor((Math.random() * 10) + 1);
 }
 
-/*
-IDPlayerCards = document.getElementById("playerCards");
-IDDealerCards = document.getElementById("playerCards");
-
-IDPlayerCards = displayCards(playerCards);
-IDDealerCards = displayCards(dealerCards);
-*/
 document.querySelector("#PlayerCards").innerHTML = displayCards(playerCards);
 document.querySelector("#DealerCards").innerHTML = displayCards(dealerCards);
