@@ -5,11 +5,11 @@ function hit(cards, enemyCards) {
     const deleteCards = decideMove(enemyCards);
 
     if (calculateWinner(cards, enemyCards)) {
-        alert("You won"); // TODO: add template literal to say something like this
-                          // You won + playerCards > enemyCards
-                          // Same thing for when player loses
+        const msg = "You won " + "(" + calculateCards(cards) + " > " + calculateCards(enemyCards) + ")";
+        alert(msg);
     } else {
-        alert("You lost");
+        const msg = "You won " + "(" + calculateCards(enemyCards) + " > " + cards + ")";
+        alert(msg);
     }
 
     // This function will only occur when player closes alert message
@@ -26,9 +26,11 @@ function stand(cards, enemyCards) {
     const deleteCards = decideMove(enemyCards);
 
     if (calculateWinner(cards, enemyCards)) {
-        alert("You won");
+        const msg = "You won " + "(" + calculateCards(cards) + " > " + calculateCards(enemyCards) + ")";
+        alert(msg);
     } else {
-        alert("You lost");
+        const msg = "You won " + "(" + calculateCards(enemyCards) + " > " + calculateCards(cards) + ")";
+        alert(msg);
     }
 
     if (deleteCards) {
