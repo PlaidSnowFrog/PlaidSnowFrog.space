@@ -97,6 +97,10 @@ function calculateWinner(cards, enemyCards) { // False = Player lost;  True = Pl
     }
 }
 
+function refresh() {
+    location.reload();
+}
+
 // Logic
 
 // Generate cards
