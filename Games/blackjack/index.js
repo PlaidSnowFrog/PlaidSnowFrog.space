@@ -3,23 +3,36 @@ function hit(cards, enemyCards) {
     cards.push(Math.floor((Math.random() * 10) + 1)); // Add card
     updateDisplay();  // Update the displayed cards
 
-    decideMove(enemyCards);
+    const deleteCards = decideMove(enemyCards);
 
     if (calculateWinner(cards, enemyCards)) {
-        alert("You won");
+        alert("You won"); // TODO: add template literal to say something like this
+                          // You won + playerCards > enemyCards
+                          // Same thing for when player loses
     } else {
         alert("You lost");
+    }
+
+    // This function will only occur when player closes alert message
+    playerCards.pop();
+
+    if (dealerCards) {
+        enemyCards.pop();
     }
 }
 
 function stand(cards, enemyCards) {
-    decideMove(enemyCards);
+    const deleteCards = decideMove(enemyCards);
     updateDisplay();
 
     if (calculateWinner(cards, enemyCards)) {
         alert("You won");
     } else {
         alert("You lost");
+    }
+
+    if (deleteCards) {
+        enemyCards.pop();
     }
 }
 
@@ -63,12 +76,15 @@ function decideMove(cards) {
     const totalCards = calculateCards(cards);
 
     if (totalCards >= 19) { // Stand
-        return;
+        return false;
     }
 
     if (totalCards < 19) { // Hit
         cards.push(Math.floor((Math.random() * 10) + 1));
+        return true;
     }
+
+    // Values are useful for resetting array later
 }
 
 function calculateWinner(cards, enemyCards) { // False = Player lost;  True = Player won
