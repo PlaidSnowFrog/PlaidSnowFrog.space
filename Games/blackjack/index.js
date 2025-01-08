@@ -1,7 +1,6 @@
 // Functions
 function hit(cards, enemyCards) {
     cards.push(Math.floor((Math.random() * 10) + 1)); // Add card
-    updateDisplay();  // Update the displayed cards
 
     const deleteCards = decideMove(enemyCards);
 
@@ -19,11 +18,12 @@ function hit(cards, enemyCards) {
     if (dealerCards) {
         enemyCards.pop();
     }
+
+    updateDisplay();  // Update the displayed cards
 }
 
 function stand(cards, enemyCards) {
     const deleteCards = decideMove(enemyCards);
-    updateDisplay();
 
     if (calculateWinner(cards, enemyCards)) {
         alert("You won");
@@ -34,6 +34,8 @@ function stand(cards, enemyCards) {
     if (deleteCards) {
         enemyCards.pop();
     }
+
+    updateDisplay();  // Update the displayed cards
 }
 
 function calculateCards(cards) {
