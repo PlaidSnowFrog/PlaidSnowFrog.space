@@ -8,7 +8,7 @@ function hit(cards, enemyCards) {
         const msg = "You won " + "(" + calculateCards(cards) + " > " + calculateCards(enemyCards) + ")";
         alert(msg);
     } else {
-        const msg = "You won " + "(" + calculateCards(enemyCards) + " > " + cards + ")";
+        const msg = "You lost " + "(" + calculateCards(enemyCards) + " > " + cards + ")";
         alert(msg);
     }
 
@@ -29,7 +29,7 @@ function stand(cards, enemyCards) {
         const msg = "You won " + "(" + calculateCards(cards) + " > " + calculateCards(enemyCards) + ")";
         alert(msg);
     } else {
-        const msg = "You won " + "(" + calculateCards(enemyCards) + " > " + calculateCards(cards) + ")";
+        const msg = "You lost " + "(" + calculateCards(enemyCards) + " > " + calculateCards(cards) + ")";
         alert(msg);
     }
 
