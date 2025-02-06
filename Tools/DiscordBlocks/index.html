@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Games</title>
+    <title>Discord Blocks</title>
 
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h1 class="TitleText">Games</h1>
+    <h1 class="TitleText">Tools</h1>
+
     <div class="GapBackground">
-        <a href="../" class="Text">Back</a>
-        <a href="/Games/blackjack/" class="Text">Blackjack</a>
-        <a href="/Games/roulette/" class="Text">Roulette</a>
+    	<form id="rawText">
+    		Text: <input type="text" name="text"><br>
+
+    		<input type="button" onclick="process()" value="Submit">
+    	</form>
     </div>
+
+    <script src="index.js"></script>
 </body>
 </html>
