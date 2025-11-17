@@ -11,7 +11,7 @@ function generate() {
   let output = "";
 
   for (let i = 0; i < symbols.length; i++) {
-    let random = Math.floor(Math.random * 8);
+    let random = Math.floor(Math.random() * 7);
     
     symbols[i] = Symbols[random];
   }
@@ -20,7 +20,9 @@ function generate() {
     output += symbols[i];
   }
 
-  return output;
+  if (symbols[0] === symbols[1] === symbols[2]) {
+    alert("Jackpot!");
+  }
 
-  updateDisplay();
+  return output;
 }
