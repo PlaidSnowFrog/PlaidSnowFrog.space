@@ -20,7 +20,7 @@ function generate() {
     output += symbols[i];
   }
 
-  if (symbols[0] === symbols[1] === symbols[2]) {
+  if (symbols[1] == symbols[2] && symbols[2] == symbols[3]) {
     alert("Jackpot!");
   }
 
